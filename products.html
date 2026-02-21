@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products — Asobi Hobby Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ─── NAV ─── -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo-container">
+                <img src="assets/asobi-logo.png" alt="Asobi Hobby Shop" class="logo-image">
+                <div class="logo-text">Asobi<span>Hobby Shop</span></div>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ─── PAGE HEADER ─── -->
+    <div class="products-page">
+        <div class="products-page-hero">
+            <h1>Our Products</h1>
+            <p>Pokémon · One Piece · Cardfight!! Vanguard</p>
+        </div>
+
+        <div class="products-page-content">
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" onclick="filterProducts('all', this)">All</button>
+                <button class="filter-tab" onclick="filterProducts('pokemon', this)"> Pokémon</button>
+                <button class="filter-tab" onclick="filterProducts('onepiece', this)"> One Piece</button>
+                <button class="filter-tab" onclick="filterProducts('vanguard', this)"> Vanguard</button>
+                <button class="filter-tab" onclick="filterProducts('accessories', this)"> Accessories</button>
+            </div>
+
+            <!-- ── POKÉMON ── -->
+            <div class="tcg-section" id="section-pokemon">
+                <div class="tcg-section-header">
+                    <span class="tcg-icon"></span>
+                    <h3>Pokémon TCG</h3>
+                    <span class="tcg-label">In Stock</span>
+                </div>
+                <div class="products-full-grid">
+
+                    <div class="product-card" data-category="pokemon">
+                        <div class="product-image" style="background:linear-gradient(135deg,#1a0000,#5c0000);">⚡</div>
+                        <div class="product-content">
+                            <div class="product-badge">Pokémon</div>
+                            <h3>Scarlet & Violet Packs</h3>
+                            <p>Latest SV expansion booster packs. Chase EX cards, rare holos, and full-art illustrations.</p>
+                            <a href="index.html#contact" class="product-link">Inquire</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="pokemon">
+                        <div class="product-image" style="background:linear-gradient(135deg,#1a0a00,#4d2000);">🌟</div>
+                        <div class="product-content">
+                            <div class="product-badge">Pokémon</div>
+                            <h3>Elite Trainer Box</h3>
+                            <p>Packs, sleeves, dice, damage counters — everything you need in one premium box.</p>
+                            <a href="index.html#contact" class="product-link">Inquire</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="pokemon">
+                        <div class="product-image" style="background:linear-gradient(135deg,#0a001a,#200050);">🃏</div>
+                        <div class="product-content">
+                            <div class="product-badge">Pokémon</div>
+                            <h3>Starter Decks</h3>
+                            <p>Pre-built 60-card decks ready to play right out of the box. Perfect for beginners!</p>
+                            <a href="index.html#contact" class="product-link">Inquire</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="pokemon">
+                        <div class="product-image" style="background:linear-gradient(135deg,#001a00,#003d00);">💎</div>
+                        <div class="product-content">
+                            <div class="product-badge">Pokémon</div>
+                            <h3>Special Collections</h3>
+                            <p>Premium tins, collection boxes, and promo bundles featuring exclusive cards and accessories.</p>
+                            <a href="index.html#contact" class="product-link">Inquire</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── ONE PIECE ── -->
+            <div class="tcg-section" id="section-onepiece">
+                <div class="tcg-section-header">
+                    <span class="tcg-icon">🏴‍☠️</span>
+                    <h3>One Piece TCG</h3>
+                    <span class="tcg-label op-label">In Stock</span>
+                </div>
+                <div class="products-full-grid">
+
+                    <div class="product-card" data-category="onepiece">
+                        <div class="product-image" style="background:linear-gradient(135deg,#1a0500,#4d1500);">🌊</div>
+                        <div class="product-content">
+                            <div class="product-badge badge-op">One Piece</div>
+                            <h3>Booster Packs</h3>
+                            <p>Latest OP sets — Romance Dawn, Paramount War, and more. Pull your favourite crew members!</p>
+                            <a href="index.html#contact" class="product-link">Inquire</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="onepiece">
+                        <div class="product-image" style="background:linear-gradient(135deg,#1a0000,#4d0000);">⚓</div>
+                        <div class="product-content">
+                            <div class="product-badge badge-op">One Piece</div>
+                            <h3>Starter Decks</h3>
+                            <p>Choose your crew! Pre-built leader decks featuring Luffy, Zoro, Law, and more iconic characters.</p>
+                            <a href="index.html#contact" class="product-link">Inquire</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="onepiece">
+                        <div class="product-image" style="background:linear-gradient(135deg,#0a0a1a,#1a1a4d);">👑</div>
+                        <div class="product-content">
+                            <div class="product-badge badge-op">One Piece</div>
+                            <h3>Premium Packs</h3>
+                            <p>Special edition packs and boxes featuring alternate artwork and exclusive Treasure rare cards.</p>
+                            <a href="index.html#contact" class="product-link">Inquire</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── VANGUARD ── -->
+            <div class="tcg-section" id="section-vanguard">
+                <div class="tcg-section-header">
+                    <span class="tcg-icon">⚔️</span>
+                    <h3>Cardfight!! Vanguard</h3>
+                    <span class="tcg-label vg-label">In Stock</span>
+                </div>
+                <div class="products-full-grid">
+
+                    <div class="product-card" data-category="vanguard">
+                        <div class="product-image" style="background:linear-gradient(135deg,#000d1a,#002244);">🛡️</div>
+                        <div class="product-content">
+                            <div class="product-badge badge-vg">Vanguard</div>
+                            <h3>Booster Packs</h3>
+                            <p>Latest V Series and overDress booster sets. Find the perfect cards to complete your clan deck!</p>
+                            <a href="index.html#contact" class="product-link">Inquire</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="vanguard">
+                        <div class="product-image" style="background:linear-gradient(135deg,#001a0d,#003d1a);">⚔️</div>
+                        <div class="product-content">
+                            <div class="product-badge badge-vg">Vanguard</div>
+                            <h3>Trial Decks</h3>
+                            <p>Beginner-ready pre-built decks organized by clan. Jump straight into battle with a ready-to-play deck!</p>
+                            <a href="index.html#contact" class="product-link">Inquire</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="vanguard">
+                        <div class="product-image" style="background:linear-gradient(135deg,#0d0d00,#2a2a00);">✨</div>
+                        <div class="product-content">
+                            <div class="product-badge badge-vg">Vanguard</div>
+                            <h3>Special Sets</h3>
+                            <p>Special series, clan selection packs, and collaboration sets for dedicated Vanguard fighters.</p>
+                            <a href="index.html#contact" class="product-link">Inquire</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── ACCESSORIES ── -->
+            <div class="tcg-section" id="section-accessories">
+                <div class="tcg-section-header">
+                    <span class="tcg-icon">🛡️</span>
+                    <h3>Accessories</h3>
+                    <span class="tcg-label">All Games</span>
+                </div>
+                <div class="products-full-grid">
+
+                    <div class="product-card" data-category="accessories">
+                        <div class="product-image" style="background:linear-gradient(135deg,#0d0d0d,#2a2a2a);">🛡️</div>
+                        <div class="product-content">
+                            <div class="product-badge">Accessories</div>
+                            <h3>Card Sleeves</h3>
+                            <p>Premium matte and glossy sleeves in standard and Japanese sizes. Protect your pulls in style!</p>
+                            <a href="index.html#contact" class="product-link">Inquire</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="accessories">
+                        <div class="product-image" style="background:linear-gradient(135deg,#0d0808,#2a1010);">📦</div>
+                        <div class="product-content">
+                            <div class="product-badge">Accessories</div>
+                            <h3>Deck Boxes & Binders</h3>
+                            <p>Keep your decks organized and your collection looking great with our range of storage solutions.</p>
+                            <a href="index.html#contact" class="product-link">Inquire</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="accessories">
+                        <div class="product-image" style="background:linear-gradient(135deg,#080d0d,#102020);">🗺️</div>
+                        <div class="product-content">
+                            <div class="product-badge">Accessories</div>
+                            <h3>Playmats</h3>
+                            <p>Full-size rubber playmats in tournament-legal and mini sizes. Available in various designs.</p>
+                            <a href="index.html#contact" class="product-link">Inquire</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div style="margin-top:4rem;text-align:center;background:var(--poke-navy);border-radius:20px;padding:3.5rem 2rem;border-top:5px solid var(--poke-yellow);">
+                <h2 style="font-family:'Righteous',cursive;font-size:1.9rem;color:white;margin-bottom:0.8rem;letter-spacing:1px;">Looking for Something Specific?</h2>
+                <p style="color:rgba(255,255,255,0.65);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;font-weight:600;">We take special orders! Message us on Facebook or email us and we'll do our best to source it for you.</p>
+                <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                    <a href="https://web.facebook.com/PoroHoloTCG" target="_blank" class="btn btn-secondary"><span>Message on Facebook</span></a>
+                    <a href="mailto:zaarr06@gmail.com" class="btn btn-primary"><span>Send an Email</span></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">Asobi Hobby Shop</div>
+            <p class="footer-copy">&copy; 2026 Asobi Hobby Shop. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Filter — shows/hides entire TCG sections
+        function filterProducts(category, btn) {
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+
+            const sections = {
+                pokemon:     'section-pokemon',
+                onepiece:    'section-onepiece',
+                vanguard:    'section-vanguard',
+                accessories: 'section-accessories',
+            };
+
+            if (category === 'all') {
+                Object.values(sections).forEach(id => {
+                    document.getElementById(id).style.display = 'block';
+                });
+            } else {
+                Object.entries(sections).forEach(([key, id]) => {
+                    document.getElementById(id).style.display = (key === category) ? 'block' : 'none';
+                });
+            }
+        }
+
+        // Make all cards immediately visible on products page
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.opacity = '1';
+            card.style.transform = 'none';
+        });
+    </script>
+</body>
+</html>

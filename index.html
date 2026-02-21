@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asobi Hobby Shop — TCG & Collectibles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ─── NAV ─── -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo-container">
+                <img src="assets/asobi-logo.png" alt="Asobi Hobby Shop" class="logo-image">
+                <div class="logo-text">Asobi<span>Hobby Shop</span></div>
+            </a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products-preview">Products</a></li>
+                <li><a href="#about">Champion</a></li>
+                <li><a href="">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="products.html" class="nav-cta">Shop Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ─── HERO ─── -->
+    <section id="home" class="hero">
+        <div class="hero-bg-dots"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge"> Asobi Hobby Shop </div>
+                <h1>Your Ultimate
+                    <span class="hero-accent">Card Game HQ</span>
+                </h1>
+                <p>Pokémon, One Piece, and more — we've got the packs, decks, and accessories every trainer needs. Join our weekly game nights and earn rewards!</p>
+                <div class="cta-buttons">
+                    <a href="#products-preview" class="btn btn-primary"><span>Browse Products</span></a>
+                    <a href="#about" class="btn btn-secondary"><span>More</span></a>
+                </div>
+            </div>
+            <div class="hero-logo-display">
+                <img src="assets/asobi-logo.png" alt="Asobi Hobby Shop">
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FEATURED CARD ─── -->
+    <section class="featured">
+    <div class="featured-grid">
+
+        <div class="featured-image-carousel-container">
+            <button class="carousel-arrow left" id="prevBtn" aria-label="Previous Card">&#10094;</button>
+            
+            <div class="featured-card-viewport" id="featuredCarousel">
+                
+                <div class="featured-card-wrapper reveal">
+                    <img src="assets/Gold Mega Charizard X ex.jpg" alt="Featured Pokémon Card" class="featured-card-img">
+                </div>
+
+                <div class="featured-card-wrapper">
+                    <img src="assets/mangaluffy.jpg" alt="Featured One Piece Card" class="featured-card-img">
+                </div>
+
+                 <div class="featured-card-wrapper">
+                    <img src="assets/zekrom.jpg" alt="Featured One Piece Card" class="featured-card-img">
+                </div>
+
+                 <div class="featured-card-wrapper">
+                    <img src="assets/victini.jpg" alt="Featured One Piece Card" class="featured-card-img">
+                </div>
+
+                </div>
+
+            <button class="carousel-arrow right" id="nextBtn" aria-label="Next Card">&#10095;</button>
+        </div>
+
+        <div class="featured-content reveal">
+            <h2>Catch Your Next<br><span class="yellow-text">Legendary Pull!</span></h2>
+            <p>Every pack you open at Asobi could hold your next favourite card. We keep fresh stock of the latest sets — come in and chase those rare holos!</p>
+            <div class="featured-tags">
+                <span class="featured-tag">Pokémon TCG</span>
+                <span class="featured-tag">One Piece Card Game</span>
+                <span class="featured-tag">And more!!</span>
+            </div>
+            <a href="products.html" class="btn btn-primary"><span>See All Products</span></a>
+        </div>
+
+    </div>
+    </section>
+
+    <!-- ─── PRODUCTS PREVIEW ─── -->
+    <section id="products-preview" class="products">
+        <div class="section-title reveal">
+            <h2 class="product-sec-header">Featured Products</h2>
+            <p>A taste of what we carry — visit the full shop for everything!</p>
+        </div>
+        <div class="products-grid">
+
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <img src="assets/asobi-logo.png" class="product-img">
+                </div>
+                <div class="product-content">
+                    <div class="product-badge">Pokémon</div>
+                    <h3>Booster Packs</h3>
+                    <p>Latest Scarlet & Violet expansion packs. Fresh stock every week — chase those EX and rare holo cards!</p>
+                    <a href="products.html" class="product-link">Shop Packs</a>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <img src="assets/asobi-logo.png" class="product-img">
+                </div>
+                <div class="product-content">
+                    <div class="product-badge badge-op">One Piece</div>
+                    <h3>One Piece Sets</h3>
+                    <p>Latest OP sets in stock. Pull your favourite Straw Hat and build an unbeatable leader deck!</p>
+                    <a href="products.html" class="product-link">Shop One Piece</a>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <img src="assets/asobi-logo.png" class="product-img">
+                </div>
+                <div class="product-content">
+                    <div class="product-badge badge-vg">Accessories</div>
+                    <h3>TCG Accessories</h3>
+                    <p>Dice, Sleeces, coins, deck boxes, and more!</p>
+                    <a href="products.html" class="product-link">Shop Vanguard</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="products-footer reveal">
+            <a href="products.html" class="btn btn-primary"><span>View All Products</span></a>
+        </div>
+    </section>
+
+    <!-- ─── Champion ─── -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content reveal">
+                <h2>Gotta Catch<span class="yellow-line">Them All!</span></h2>
+                <p>Pokemon TCG</p>
+            </div>
+            <div class="stats reveal">
+                <div class="stat">
+                    <h3>Week 2</h3>
+                    <p>February</p>
+                </div>
+                <div class="stat">
+                    <h3>Gene</h3>
+                    <p>Champion</p>
+                </div>
+                <div class="stat">
+                    <h3>Deck</h3>
+                    <p>Mega Abomasnow EX</p>
+                </div>
+            </div>
+        <div class="about-content reveal">
+                <h2>King of <span class="yellow-line">Pirates</span></h2>
+                <p>One Piece Card Game</p>
+            </div>
+            <div class="stats reveal">
+                <div class="stat">
+                    <h3>Week 2</h3>
+                    <p>February</p>
+                </div>
+                <div class="stat">
+                    <h3>Gene</h3>
+                    <p>Champion</p>
+                </div>
+                <div class="stat">
+                    <h3>Deck</h3>
+                    <p>Mega Abomasnow EX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── REGISTRATION ─── -->
+<section id="register" class="register">
+    <div class="register-container">
+        <div class="section-title reveal">
+            <h2>Join The Battle!</h2>
+            <p>Sign up for exclusive tournaments and weekly game nights!</p>
+        </div>
+
+        <div class="register-cards reveal">
+
+            <!-- Pokémon TCG Registration -->
+            <div class="register-card pokemon-card">
+                <div class="register-card-game-badge">Pokémon TCG</div>
+                <h3>Pokémon Tournament</h3>
+                <p>Register for our weekly Pokémon TCG battles. Compete, earn prizes, and climb the leaderboard!</p>
+                <ul class="register-perks">
+                    <li> &#8213; Weekly tournaments</li>
+                    <li> &#8213; Prize support</li>
+                    <li> &#8213; All skill levels welcome</li>
+                </ul>
+                <a href="https://forms.gle/YOUR-POKEMON-FORM-ID" target="_blank" class="btn btn-primary register-btn">
+                    <span>Register for Pokémon</span>
+                </a>
+            </div>
+
+            <!-- One Piece Registration -->
+            <div class="register-card onepiece-card">
+                <div class="register-card-game-badge badge-op">One Piece TCG</div>
+                <h3>One Piece Tournament</h3>
+                <p>Join our One Piece Card Game weekly showdowns. Build your crew and sail to the top!</p>
+                <ul class="register-perks">
+                    <li> &#8213; Weekly tournaments</li>
+                    <li> &#8213; Prize support</li>
+                    <li> &#8213; All skill levels welcome</li>
+                </ul>
+                <a href="https://forms.gle/YOUR-ONEPIECE-FORM-ID" target="_blank" class="btn btn-primary register-btn">
+                    <span>Register for One Piece</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+    
+   <!-- ─── CONTACT ─── -->
+<section id="contact" class="contact">
+    <div class="contact-container">
+        <div class="section-title reveal">
+            <h2>Get In Touch</h2>
+            <p>Questions about products or events? We're here to help!</p>
+        </div>
+
+        <div class="contact-info reveal">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email Us</h3>
+                <a href="mailto:zaarr06@gmail.com" class="contact-link">zaarr06@gmail.com</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📱</div>
+                <h3>Call Us</h3>
+                <p class="contact-link">+63 XXX XXX XXXX</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">👥</div>
+                <h3>Follow Us</h3>
+                <a href="https://web.facebook.com/PoroHoloTCG" target="_blank" class="contact-link facebook-link">
+                    <span class="facebook-icon">f</span> Facebook Page
+                </a>
+            </div>
+        </div>
+
+        <!-- Partner Creators -->
+        <div class="section-title reveal partners-title">
+            <h3>Partner Creators</h3>
+            <p>Check out our amazing community creators and content partners!</p>
+        </div>
+
+        <div class="partners-grid reveal">
+            <div class="partner-card">
+                <div class="partner-avatar"><img src="assets/asobi-logo.png" class="partner-image"></div>
+                <div class="partner-info">
+                    <h4>Creator Name</h4>
+                    <div class="partner-links">
+                        <a href="https://facebook.com" target="_blank" class="partner-link fb-link">
+                            <span class="facebook-icon">f</span> Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-avatar"> <div class="partner-avatar"><img src="assets/asobi-logo.png" class="partner-image"></div></div>
+                <div class="partner-info">
+                    <h4>Creator Name</h4>
+                    <div class="partner-links">
+                        <a href="https://facebook.com" target="_blank" class="partner-link fb-link">
+                            <span class="facebook-icon">f</span> Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-avatar"> <div class="partner-avatar"><img src="assets/asobi-logo.png" class="partner-image"></div></div>
+                <div class="partner-info">
+                    <h4>Creator Name</h4>
+                    <div class="partner-links">
+                        <a href="https://facebook.com" target="_blank" class="partner-link fb-link">
+                            <span class="facebook-icon">f</span> Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-avatar"> <div class="partner-avatar"><img src="assets/asobi-logo.png" class="partner-image"></div></div>
+                <div class="partner-info">
+                    <h4>Creator Name</h4>
+                    <div class="partner-links">
+                        <a href="https://facebook.com" target="_blank" class="partner-link fb-link">
+                            <span class="facebook-icon">f</span> Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">Asobi Hobby Shop</div>
+            <p class="footer-copy">&copy; 2026 Asobi Hobby Shop. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
