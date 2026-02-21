@@ -619,10 +619,10 @@ footer .footer-links a { color: rgba(255,255,255,0.45); font-size: 0.82rem; text
 footer .footer-links a:hover { color: var(--poke-yellow); }
 
 /* ─── PRODUCTS PAGE ──────────────────────────── */
-.products-page { padding-top: 90px; min-height: 100vh; background: var(--poke-light); }
+.products-page { padding-top: 90px; min-height: 100vh; background: var(--poke-superblack); }
 
 .products-page-hero {
-    background: var(--grad-hero); padding: 5rem 5% 3.5rem;
+    background: var(--poke-galaxyblack); padding: 5rem 5% 3.5rem;
     text-align: center; position: relative; overflow: hidden;
     border-bottom: 4px solid var(--poke-yellow);
 }
