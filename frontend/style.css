@@ -804,6 +804,7 @@ nav a.nav-cta:hover {
     background: rgba(255, 255, 255, 0.07);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     padding: 2.2rem;
+    gap: 12px;
     border-radius: 16px;
     text-align: center;
     transition: all 0.3s ease;
@@ -821,7 +822,7 @@ nav a.nav-cta:hover {
 .contact-card h3 {
     font-family: 'Righteous', cursive;
     font-size: 1.05rem;
-    color: var(--poke-dark);
+    color: var(--poke-light);
     margin-bottom: 0.8rem;
     letter-spacing: 1px;
 }
@@ -868,6 +869,47 @@ nav a.nav-cta:hover {
     font-weight: 900;
     font-size: 0.95rem;
     font-family: Arial, sans-serif;
+}
+
+.tiktok-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #000000; /* TikTok Black */
+    color: white !important;
+    padding: 0.65rem 1.3rem ;
+    border-radius: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.82rem;
+    transition: all 0.3s;
+    width: fit-content;
+}
+
+/* Matching the Facebook hover exactly */
+.tiktok-link:hover {
+    background: var(--poke-yellow) !important;
+    color: #000 !important; /* Makes text dark when background turns yellow */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+}
+
+/* TikTok Icon Circle */
+.tiktok-icon-container {
+    background: white;
+    color: #000; /* The SVG will inherit this color */
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tiktok-link:hover .tiktok-icon-container {
+    background: #000;
+    color: var(--poke-yellow);
 }
 
 /* Partner Creators */
