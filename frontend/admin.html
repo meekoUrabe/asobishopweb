@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — Asobi Hobby Shop</title>
+    <link rel="icon" type="image/png" href="assets/Icons & Logos/asobi-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- ─── ADMIN NAV ─── -->
+    <nav class="admin-nav">
+        <div class="container">
+            <div class="logo-text">Asobi <span>Admin</span></div>
+            <ul>
+                <li><a href="index.html" target="_blank">View Site</a></li>
+                <li><a href="#" id="logoutBtn" class="nav-cta">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ─── MAIN ─── -->
+    <main class="admin-main">
+
+
+        <!-- ─── PENDING USERS ─── -->
+        <section class="admin-section" id="pendingUsersSection">
+            <h2 class="admin-section-title">👥 Pending Account Requests</h2>
+            <div id="pendingUsersList" class="admin-product-list"></div>
+        </section>
+
+            <!-- ─── APPROVED USERS ─── -->
+        <section class="admin-section" id="approvedUsersSection">
+            <h2 class="admin-section-title">✅ Approved Accounts</h2>
+            <div id="approvedUsersList" class="admin-product-list"></div>
+        </section>
+
+        <!-- ─── CHAMPIONS ─── -->
+        <section class="admin-section">
+            <h2 class="admin-section-title">🏆 Update Champions</h2>
+            <div class="admin-cards">
+
+                <!-- Pokémon Champion -->
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <div class="register-card-game-badge">Pokémon TCG</div>
+                        <span class="admin-current" id="pk-current">Loading...</span>
+                    </div>
+                    <form id="pokemonChampionForm" class="admin-form">
+                        <div class="admin-form-row">
+                            <div class="admin-field">
+                                <label>Week</label>
+                                <input type="text" id="pk-week" placeholder="e.g. Week 4" class="admin-input">
+                            </div>
+                            <div class="admin-field">
+                                <label>Month</label>
+                                <input type="text" id="pk-month" placeholder="e.g. March" class="admin-input">
+                            </div>
+                        </div>
+                        <div class="admin-form-row">
+                            <div class="admin-field">
+                                <label>Champion Name</label>
+                                <input type="text" id="pk-name" placeholder="e.g. Ash" class="admin-input">
+                            </div>
+                            <div class="admin-field">
+                                <label>Deck</label>
+                                <input type="text" id="pk-deck" placeholder="e.g. Pikachu EX" class="admin-input">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary admin-btn">
+                            <span>Update Pokémon Champion</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- One Piece Champion -->
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <div class="register-card-game-badge badge-op">One Piece TCG</div>
+                        <span class="admin-current" id="op-current">Loading...</span>
+                    </div>
+                    <form id="onepieceChampionForm" class="admin-form">
+                        <div class="admin-form-row">
+                            <div class="admin-field">
+                                <label>Week</label>
+                                <input type="text" id="op-week" placeholder="e.g. Week 4" class="admin-input">
+                            </div>
+                            <div class="admin-field">
+                                <label>Month</label>
+                                <input type="text" id="op-month" placeholder="e.g. March" class="admin-input">
+                            </div>
+                        </div>
+                        <div class="admin-form-row">
+                            <div class="admin-field">
+                                <label>Champion Name</label>
+                                <input type="text" id="op-name" placeholder="e.g. Luffy" class="admin-input">
+                            </div>
+                            <div class="admin-field">
+                                <label>Deck</label>
+                                <input type="text" id="op-deck" placeholder="e.g. Straw Hats" class="admin-input">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary admin-btn">
+                            <span>Update One Piece Champion</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ─── PRODUCTS ─── -->
+        <section class="admin-section">
+            <div class="admin-section-header">
+                <h2 class="admin-section-title">📦 Manage Products</h2>
+                <button class="btn btn-primary" id="toggleAddForm">
+                    <span>+ Add Product</span>
+                </button>
+            </div>
+
+            <!-- Add Product Form -->
+            <div class="admin-card" id="addProductForm" style="display:none; margin-bottom: 2rem;">
+                <h3 class="admin-card-title">New Product</h3>
+                <div class="admin-form-row">
+                    <div class="admin-field">
+                        <label>Product Name</label>
+                        <input type="text" id="new-name" placeholder="e.g. Booster Pack" class="admin-input">
+                    </div>
+                    <div class="admin-field">
+                        <label>Category</label>
+                        <select id="new-category" class="admin-input">
+                            <option value="pokemon">Pokémon</option>
+                            <option value="onepiece">One Piece</option>
+                            <option value="accessories">Accessories</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin-form-row">
+                    <div class="admin-field">
+                        <label>Product Image (PNG, JPG)</label>
+                        <input type="file" id="new-image" accept=".png,.jpg,.jpeg,.webp" class="admin-input">
+                    </div>
+                    <div class="admin-field">
+                        <label>Stock Quantity</label>
+                        <input type="number" id="new-stock" min="0" placeholder="0" class="admin-input">
+                    </div>
+                </div>
+                <div class="admin-field" style="margin-top: 0.8rem;">
+                    <label>Description</label>
+                    <textarea id="new-description" placeholder="Brief product description..." class="admin-input admin-textarea"></textarea>
+                </div>
+                <div class="admin-form-actions">
+                    <button class="btn btn-primary" id="submitProduct"><span>Add Product</span></button>
+                    <button class="btn btn-secondary" id="cancelAdd"><span>Cancel</span></button>
+                </div>
+            </div>
+
+            <!-- Product List -->
+            <div id="productList" class="admin-product-list"></div>
+
+        </section>
+
+    </main>
+
+        <!-- ─── EDIT PRODUCT MODAL ─── -->
+        <div class="modal-overlay" id="editModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Edit Product</h3>
+                    <button class="modal-close" id="closeModal">&times;</button>
+                </div>
+                <input type="hidden" id="edit-id">
+                <div class="admin-form-row">
+                    <div class="admin-field">
+                        <label>Product Name</label>
+                        <input type="text" id="edit-name" class="admin-input">
+                    </div>
+                    <div class="admin-field">
+                        <label>Category</label>
+                        <select id="edit-category" class="admin-input">
+                            <option value="pokemon">Pokémon</option>
+                            <option value="onepiece">One Piece</option>
+                            <option value="accessories">Accessories</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin-form-row" style="margin-top: 0.8rem;">
+                    <div class="admin-field">
+                        <label>New Image (optional)</label>
+                        <input type="file" id="edit-image" accept=".png,.jpg,.jpeg,.webp" class="admin-input">
+                    </div>
+                    <div class="admin-field">
+                        <label>Stock Quantity</label>
+                        <input type="number" id="edit-stock" min="0" class="admin-input">
+                    </div>
+                </div>
+                <div class="admin-field" style="margin-top: 0.8rem;">
+                    <label>Description</label>
+                    <textarea id="edit-description" class="admin-input admin-textarea"></textarea>
+                </div>
+                <div class="admin-form-actions" style="margin-top: 1.2rem;">
+                    <button class="btn btn-primary" id="saveEdit"><span>Save Changes</span></button>
+                    <button class="btn btn-secondary" id="cancelEdit"><span>Cancel</span></button>
+                </div>
+            </div>
+        </div>
+
+    <script>
+        // ─── Auth Guard ───────────────────────────────────────────
+        const token = localStorage.getItem('asobiAdminToken');
+        const role  = localStorage.getItem('asobiAdminRole');
+        if (!token) window.location.href = 'login.html';
+
+
+
+        if (role !== 'head_admin') {
+            document.getElementById('pendingUsersSection').style.display  = 'none';
+            document.getElementById('approvedUsersSection').style.display = 'none';
+        }
+
+        function authHeaders() {
+            return {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            };
+        }
+
+        // ─── Logout ───────────────────────────────────────────────
+        document.getElementById('logoutBtn').addEventListener('click', function (e) {
+            e.preventDefault();
+            localStorage.removeItem('asobiAdminToken');
+            localStorage.removeItem('asobiAdminRole');
+            window.location.href = 'login.html';
+        });
+
+        // ─── Load Current Champions ───────────────────────────────
+        async function loadChampions() {
+            try {
+                const res       = await fetch('/api/champions');
+                const champions = await res.json();
+
+                champions.forEach(c => {
+                    const el = document.getElementById(
+                        c.game === 'pokemon' ? 'pk-current' : 'op-current'
+                    );
+                    if (el) el.textContent = `Current: ${c.name} — ${c.deck} (${c.week}, ${c.month})`;
+                });
+            } catch (err) {
+                console.error('Failed to load champions:', err);
+            }
+        }
+
+
+        // ─── Load Users ───────────────────────────────────────────
+        async function loadPendingUsers() {
+            try {
+                const res   = await fetch('/api/users', { headers: authHeaders() });
+                const users = await res.json();
+
+                const pendingList  = document.getElementById('pendingUsersList');
+                const approvedList = document.getElementById('approvedUsersList');
+                const pendingSection  = document.getElementById('pendingUsersSection');
+                const approvedSection = document.getElementById('approvedUsersSection');
+
+                const pending  = users.filter(u => u.status === 'pending');
+                const approved = users.filter(u => u.status === 'approved');
+
+                // ─── Pending ──────────────────────────────────────
+                if (pending.length === 0) {
+                    pendingSection.style.display = 'none';
+                } else {
+                    pendingSection.style.display = 'block';
+                    pendingList.innerHTML = pending.map(u => `
+                        <div class="admin-product-row">
+                            <div class="admin-product-info">
+                                <span class="admin-product-name">👤 ${u.username}</span>
+                                <span class="admin-product-meta">Requested on ${new Date(u.created_at).toLocaleDateString()}</span>
+                            </div>
+                            <div class="admin-product-actions">
+                                <button class="admin-action-btn toggle-btn"
+                                    onclick="approveUser(${u.id}, '${u.username}')">
+                                    Approve
+                                </button>
+                                <button class="admin-action-btn delete-btn"
+                                    onclick="rejectUser(${u.id}, '${u.username}')">
+                                    Reject
+                                </button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+
+                // ─── Approved ─────────────────────────────────────
+                if (approved.length === 0) {
+                    approvedSection.style.display = 'none';
+                } else {
+                    approvedSection.style.display = 'block';
+                    approvedList.innerHTML = approved.map(u => `
+                        <div class="admin-product-row">
+                            <div class="admin-product-info">
+                                <span class="admin-product-name">👤 ${u.username}</span>
+                                <span class="admin-product-meta">🟢 Approved · Joined ${new Date(u.created_at).toLocaleDateString()}</span>
+                            </div>
+                            <div class="admin-product-actions">
+                                <button class="admin-action-btn delete-btn"
+                                    onclick="revokeUser(${u.id}, '${u.username}')">
+                                    Revoke Access
+                                </button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+
+            } catch (err) {
+                console.error('Failed to load users:', err);
+            }
+        }
+
+        // ─── Approve User ─────────────────────────────────────────
+        async function approveUser(id, username) {
+            try {
+                const res = await fetch(`/api/users/${id}/approve`, {
+                    method:  'PUT',
+                    headers: authHeaders()
+                });
+                const result = await res.json();
+
+                if (res.ok) {
+                    showToast(`✅ ${username} approved!`);
+                    loadPendingUsers();
+                } else {
+                    showToast(`❌ ${result.error}`, true);
+                }
+            } catch (err) {
+                showToast('❌ Something went wrong', true);
+            }
+        }
+
+        // ─── Reject User ──────────────────────────────────────────
+        async function rejectUser(id, username) {
+            if (!confirm(`Reject "${username}"? Their account will be deleted.`)) return;
+            try {
+                const res = await fetch(`/api/users/${id}/reject`, {
+                    method:  'PUT',
+                    headers: authHeaders()
+                });
+                const result = await res.json();
+
+                if (res.ok) {
+                    showToast(`🗑️ ${username} rejected and removed`);
+                    loadPendingUsers();
+                } else {
+                    showToast(`❌ ${result.error}`, true);
+                }
+            } catch (err) {
+                showToast('❌ Something went wrong', true);
+            }
+        }
+
+        // ─── Revoke User ──────────────────────────────────────────
+        async function revokeUser(id, username) {
+            if (!confirm(`Revoke access for "${username}"? They will need re-approval to log in.`)) return;
+            try {
+                const res = await fetch(`/api/users/${id}/revoke`, {
+                    method:  'PUT',
+                    headers: authHeaders()
+                });
+                const result = await res.json();
+
+                if (res.ok) {
+                    showToast(`🔒 ${username} access revoked`);
+                    loadPendingUsers();
+                } else {
+                    showToast(`❌ ${result.error}`, true);
+                }
+            } catch (err) {
+                showToast('❌ Something went wrong', true);
+            }
+        }
+        // ─── Update Champion ──────────────────────────────────────
+        document.getElementById('pokemonChampionForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            await updateChampion('pokemon', {
+                week:  document.getElementById('pk-week').value,
+                month: document.getElementById('pk-month').value,
+                name:  document.getElementById('pk-name').value,
+                deck:  document.getElementById('pk-deck').value
+            });
+        });
+
+        document.getElementById('onepieceChampionForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            await updateChampion('onepiece', {
+                week:  document.getElementById('op-week').value,
+                month: document.getElementById('op-month').value,
+                name:  document.getElementById('op-name').value,
+                deck:  document.getElementById('op-deck').value
+            });
+        });
+
+        async function updateChampion(game, data) {
+            try {
+                const res    = await fetch(`/api/champions/${game}`, {
+                    method:  'PUT',
+                    headers: authHeaders(),
+                    body:    JSON.stringify(data)
+                });
+                const result = await res.json();
+
+                if (res.ok) {
+                    showToast('✅ Champion updated!');
+                    loadChampions();
+                } else {
+                    showToast(`❌ ${result.error}`, true);
+                }
+            } catch (err) {
+                showToast('❌ Something went wrong', true);
+            }
+        }
+
+        // ─── Load Products ────────────────────────────────────────
+        async function loadAdminProducts() {
+            try {
+                const res      = await fetch('/api/products/all', { headers: authHeaders() });
+                const products = await res.json();
+                const list     = document.getElementById('productList');
+
+                if (products.length === 0) {
+                    list.innerHTML = `<p class="admin-empty">No products yet. Add one above!</p>`;
+                    return;
+                }
+
+                list.innerHTML = products.map(p => `
+                    <div class="admin-product-row ${!p.visible ? 'hidden-product' : ''}">
+                        <div class="admin-product-image">
+                            ${p.image_url
+                                ? `<img src="${p.image_url}" alt="${p.name}">`
+                                : `<div class="admin-no-image">📦</div>`
+                            }
+                        </div>
+                        <div class="admin-product-info">
+                            <span class="admin-product-name">${p.name}</span>
+                            <span class="admin-product-meta">
+                                ${p.category} · ${p.visible ? '🟢 Visible' : '🔴 Hidden'} · Stock: ${p.stock}
+                            </span>
+                            <span class="admin-product-desc">${p.description}</span>
+                        </div>
+                        <div class="admin-product-actions">
+                            <button class="admin-action-btn edit-btn"
+                                onclick="openEditModal(${p.id}, '${p.name.replace(/'/g, "\\'")}', '${p.category}', '${p.description.replace(/'/g, "\\'")}', ${p.stock})">
+                                Edit
+                            </button>
+                            <button class="admin-action-btn toggle-btn"
+                                onclick="toggleVisible(${p.id}, ${p.visible})">
+                                ${p.visible ? 'Hide' : 'Show'}
+                            </button>
+                            <button class="admin-action-btn delete-btn"
+                                onclick="deleteProduct(${p.id}, '${p.name}')">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+
+            } catch (err) {
+                console.error('Failed to load products:', err);
+            }
+        }
+
+        // ─── Toggle Product Visibility ────────────────────────────
+        async function toggleVisible(id, currentVisible) {
+            try {
+                await fetch(`/api/products/${id}`, {
+                    method:  'PUT',
+                    headers: authHeaders(),
+                    body:    JSON.stringify({ visible: currentVisible ? 0 : 1 })
+                });
+                loadAdminProducts();
+            } catch (err) {
+                showToast('❌ Something went wrong', true);
+            }
+        }
+
+        // ─── Delete Product ───────────────────────────────────────
+        async function deleteProduct(id, name) {
+            if (!confirm(`Delete "${name}"? This cannot be undone.`)) return;
+            try {
+                await fetch(`/api/products/${id}`, {
+                    method:  'DELETE',
+                    headers: authHeaders()
+                });
+                showToast('🗑️ Product deleted');
+                loadAdminProducts();
+            } catch (err) {
+                showToast('❌ Something went wrong', true);
+            }
+        }
+
+        // ─── Add Product ──────────────────────────────────────────
+        document.getElementById('toggleAddForm').addEventListener('click', function () {
+            const form = document.getElementById('addProductForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.getElementById('cancelAdd').addEventListener('click', function () {
+            document.getElementById('addProductForm').style.display = 'none';
+        });
+
+        document.getElementById('submitProduct').addEventListener('click', async function () {
+            const name        = document.getElementById('new-name').value;
+            const category    = document.getElementById('new-category').value;
+            const description = document.getElementById('new-description').value;
+            const imageFile   = document.getElementById('new-image').files[0];
+            const stock       = document.getElementById('new-stock').value;
+
+            if (!name || !description) {
+                showToast('❌ Name and description are required', true);
+                return;
+            }
+
+            const submitBtn = document.getElementById('submitProduct');
+            submitBtn.innerHTML = `<span>⏳ Uploading...</span>`;
+            submitBtn.disabled  = true;
+
+            const formData = new FormData();
+            formData.append('name',        name);
+            formData.append('category',    category);
+            formData.append('description', description);
+            formData.append('stock',       stock || 0);
+            if (imageFile) formData.append('image', imageFile);
+
+            try {
+                const res    = await fetch('/api/products', {
+                    method:  'POST',
+                    headers: { 'Authorization': `Bearer ${token}` },
+                    body:    formData
+                });
+                const result = await res.json();
+
+                if (res.ok) {
+                    showToast('✅ Product added!');
+                    document.getElementById('addProductForm').style.display = 'none';
+                    loadAdminProducts();
+                } else {
+                    showToast(`❌ ${result.error}`, true);
+                }
+            } catch (err) {
+                showToast('❌ Something went wrong', true);
+            } finally {
+                submitBtn.innerHTML = `<span>+ Add Product</span>`;
+                submitBtn.disabled  = false;
+            }
+        });
+
+        // ─── Edit Product Modal ───────────────────────────────────
+        function openEditModal(id, name, category, description, stock) {
+            document.getElementById('edit-id').value          = id;
+            document.getElementById('edit-name').value        = name;
+            document.getElementById('edit-category').value    = category;
+            document.getElementById('edit-description').value = description;
+            document.getElementById('edit-stock').value    = stock || 0 ;
+            document.getElementById('edit-image').value       = '';
+            document.getElementById('editModal').classList.add('active');
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').classList.remove('active');
+        }
+
+        document.getElementById('closeModal').addEventListener('click', closeEditModal);
+        document.getElementById('cancelEdit').addEventListener('click', closeEditModal);
+
+        // Close modal when clicking outside
+        document.getElementById('editModal').addEventListener('click', function (e) {
+            if (e.target === this) closeEditModal();
+        });
+
+        document.getElementById('saveEdit').addEventListener('click', async function () {
+            const id          = document.getElementById('edit-id').value;
+            const name        = document.getElementById('edit-name').value;
+            const category    = document.getElementById('edit-category').value;
+            const description = document.getElementById('edit-description').value;
+            const stock       = document.getElementById('edit-stock').value;
+            const imageFile   = document.getElementById('edit-image').files[0];
+
+            if (!name || !description) {
+                showToast('❌ Name and description are required', true);
+                return;
+            }
+
+            const saveBtn = document.getElementById('saveEdit');
+            saveBtn.innerHTML = `<span>⏳ Saving...</span>`;
+            saveBtn.disabled  = true;
+
+            const formData = new FormData();
+            formData.append('name',        name);
+            formData.append('category',    category);
+            formData.append('description', description);
+            formData.append('stock',       stock || 0);
+            if (imageFile) formData.append('image', imageFile);
+
+            try {
+                const res    = await fetch(`/api/products/${id}`, {
+                    method:  'PUT',
+                    headers: { 'Authorization': `Bearer ${token}` },
+                    body:    formData
+                });
+                const result = await res.json();
+
+                if (res.ok) {
+                    showToast('✅ Product updated!');
+                    closeEditModal();
+                    loadAdminProducts();
+                } else {
+                    showToast(`❌ ${result.error}`, true);
+                }
+            } catch (err) {
+                showToast('❌ Something went wrong', true);
+            } finally {
+                saveBtn.innerHTML = `<span>Save Changes</span>`;
+                saveBtn.disabled  = false;
+            }
+        });
+
+        // ─── Toast Notification ───────────────────────────────────
+        function showToast(message, isError = false) {
+            const existing = document.querySelector('.admin-toast');
+            if (existing) existing.remove();
+
+            const toast = document.createElement('div');
+            toast.className = `admin-toast ${isError ? 'toast-error' : 'toast-success'}`;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => toast.classList.add('toast-visible'), 10);
+            setTimeout(() => {
+                toast.classList.remove('toast-visible');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // ─── Init ─────────────────────────────────────────────────
+        loadChampions();
+        loadAdminProducts();
+        loadPendingUsers();
+    </script>
+</body>
+</html>
