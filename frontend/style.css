@@ -1717,10 +1717,12 @@ footer {
 }
 
 @media (max-width: 768px) {
-    nav ul { gap: 0; }
-    nav a { font-size: 0.78rem; padding: 0.4rem 0.55rem; }
+    /* Hide nav links on mobile — sidebar handles navigation */
+    nav ul { display: none; }
     nav .logo-text { font-size: 1rem; }
     nav .logo-image { height: 48px; }
+    nav .container { justify-content: flex-end; }
+    #sidebar-toggle { display: flex; }
     .products-grid { grid-template-columns: 1fr; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .contact-info { grid-template-columns: 1fr; }
@@ -1731,7 +1733,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-    nav a.nav-cta { display: none; }
     .stats { grid-template-columns: 1fr; }
     .filter-tabs { gap: 0.5rem; }
 }
