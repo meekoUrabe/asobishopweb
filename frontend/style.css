@@ -1766,8 +1766,8 @@ body.light-mode .contact { background: #e8efff; }
 body.light-mode .contact-card { background: #ffffff; box-shadow: 0 4px 20px rgba(59, 89, 152, 0.08); }
 body.light-mode .contact-card h3 { color: var(--poke-dark); }
 body.light-mode .contact-link { color: #444; }
-body.light-mode .partner-card { background: #ffffff; box-shadow: 0 4px 16px rgba(59, 89, 152, 0.08); }
-body.light-mode .partner-info h4 { color: var(--poke-dark); }
+body.light-mode .partner-card { background: var(--poke-black); box-shadow: 0 4px 16px rgba(59, 89, 152, 0.08); }
+body.light-mode .partner-info h4 { color: var(--poke-white); }
 body.light-mode .products-page { background: #f0f4ff; }
 body.light-mode .products-page-hero { background: linear-gradient(135deg, #dce8ff, #eaf0ff); }
 body.light-mode .products-page-hero h1 { color: var(--poke-dark); }
