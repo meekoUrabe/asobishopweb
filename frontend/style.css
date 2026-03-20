@@ -825,6 +825,11 @@ nav a.nav-cta:hover {
     margin-bottom: 18px;
 }
 
+.gregform {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 5px 5px 5px 5px;
+}
+
 .register-perks { list-style: none; padding: 0; margin: 0 0 24px 0; text-align: left; }
 .register-perks li { color: rgba(255, 255, 255, 0.85); font-size: 0.9rem; padding: 5px 0; }
 .register-btn { width: 100%; justify-content: center; }
@@ -1717,7 +1722,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* Hide nav links on mobile — sidebar handles navigation */
     nav ul { display: none; }
     nav .logo-text { font-size: 1rem; }
     nav .logo-image { height: 48px; }
@@ -1730,6 +1734,7 @@ footer {
     .btn { text-align: center; }
     .footer-inner { grid-template-columns: 1fr; text-align: center; }
     .footer-links { justify-content: center; }
+    .gregform { justify-content: center; }
 }
 
 @media (max-width: 480px) {
